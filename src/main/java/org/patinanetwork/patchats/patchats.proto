@@ -15,6 +15,22 @@ message PatChatMember {
   bool active = 3;
 }
 
+message PatChatGeneration {
+  // Unique identifier for a generation. Typically an auto-incremented integer
+  int32 id = 1;
+
+  // Timestamp of when the generation was created as a string (ISO-8601 format)
+  string generated_timestamp = 2;
+}
+
+message AddPatChatGenerationReq {
+  string generated_timestamp = 1;
+}
+
+message AddPatChatGenerationResp {
+  PatChatGeneration generation = 1;
+}
+
 message GetPatChatMemberReq {
   int32 id = 1;
 }
