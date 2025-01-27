@@ -26,7 +26,7 @@ export function EditEvent() {
 
   return (
     <Stack>
-      <Title order={3}>{'Edit Blog'}</Title>
+      <Title order={3}>{'Edit Event'}</Title>
       {eventsResp.status === 'success' ?
         <EventDataTable
           records={eventsResp.data?.events}

@@ -1,9 +1,8 @@
 package org.patinanetwork.patchats.ops;
 
-import org.patinanetwork.patchats.repo.PatChatRepo;
-import org.patinanetwork.patchats.protos.ListPatChatMembersReq;
 import org.patinanetwork.patchats.protos.ListPatChatMembersResp;
 import org.patinanetwork.patchats.protos.PatChatMember;
+import org.patinanetwork.patchats.repo.PatChatRepo;
 
 import java.util.List;
 
@@ -20,6 +19,6 @@ public class ListPatChatMembersOp {
     public ListPatChatMembersResp run() {
         List<PatChatMember> members = patChatRepo.listPatChatMembers();
 
-        return ListPatChatMembersResp.newBuilder().addAllMembers(members).build();
+        return ListPatChatMembersResp.newBuilder().addAllMembers(members).setTotal(members.size()).build();
     }
 }

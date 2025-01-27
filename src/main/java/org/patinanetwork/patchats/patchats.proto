@@ -29,6 +29,7 @@ message ListPatChatMembersReq {
 
 message ListPatChatMembersResp {
   repeated PatChatMember members = 1;
+  int32 total = 2;
 }
 
 message DeletePatChatMemberReq {
